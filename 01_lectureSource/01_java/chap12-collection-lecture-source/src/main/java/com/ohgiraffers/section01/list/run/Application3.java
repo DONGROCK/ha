@@ -17,7 +17,7 @@ public class Application3 {
     *   요소의 저장과 삭제가 빈번히 일어나는 경우 ArrayList보다 성능면에서 우수하다.
     *   하지만 단일 연결 리스트는 다음 요소만 링크하기 때문에 이전 요소로 접근하기 어렵다.
     *   이를 보완하고자 만든 것이 이중 연결 리스트이다.
-    *
+    *       ArrayLst add(), get(), remove(), set(),
     * 이중 연결 리스트
     * : 단일 연결 리스트는 다음 요소만 링크하는 반면 이중 연결 리스트는 이전 요소도 링크하여
     *   이전 요소로 접근하기 쉽게 고안된 자료구조 이다.
@@ -50,5 +50,6 @@ public class Application3 {
         linkedList.clear(); //값 지워버리기
         System.out.println(linkedList.isEmpty()); // 없다
         System.out.println(linkedList); // 없다.
+
     }
 }
