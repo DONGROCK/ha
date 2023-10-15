@@ -1,15 +1,15 @@
 package com.hw1.model.dto;
 
-public class DtoMember {
+public class Member {
     private String name; //회원명
     private int age; //회원나이
     private char gender; //성별
     private int couponCount; //요리학원쿠폰갯수 = 0;
 
-    public DtoMember() {
+    public Member() {
     }
 
-    public DtoMember(String name, int age, char gender) {
+    public Member(String name, int age, char gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -17,12 +17,10 @@ public class DtoMember {
 
     @Override
     public String toString() {
-        return "DtoMember{" +
+        return
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", gender=" + gender +
-                ", couponCount=" + couponCount +
-                '}';
+                ", gender=" + gender ;
     }
 
     public String getName() {
