@@ -12,8 +12,23 @@ public class PrintResult {
     public void printErrorMessage(String errorCode) {
         String errorMessage = "";
         switch (errorCode){
-            case "showAllMenu" : errorMessage = "전체메뉴 조회 실패.";
+            case "showAllMenu" : errorMessage = "전체메뉴 조회 실패."; break;
+            case "selectMenu" : errorMessage = "메뉴코드로 메뉴조회 실패."; break;
+            case "selectCategoryCode" : errorMessage = "카테고리로 메뉴조회 실패"; break;
         }
         System.out.println(errorMessage);
+    }
+
+    public void printSelectMenu(MenuDTO menu) {
+        System.out.println(menu);
+
+    }
+
+    public void printSuccessMessage(String successCode) {
+        String successMessage = "";
+        switch (successCode){
+            case "newMenu" : successMessage = "메뉴 등록 성공"; break;
+        }
+        System.out.println(successMessage);
     }
 }

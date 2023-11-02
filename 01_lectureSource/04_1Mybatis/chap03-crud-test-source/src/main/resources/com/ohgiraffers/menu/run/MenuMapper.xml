@@ -24,6 +24,49 @@
             tbl_menu
     </select>
 
+    <select id="selectMenu" resultMap="menuResultMap">
+        SELECT
+        menu_code,
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+        FROM
+        tbl_menu
+        WHERE
+        menu_code = #{ code }
+    </select>
 
+    <select id="selectCategoryCode" resultMap="menuResultMap">
+        SELECT
+        menu_code,
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+        FROM
+        tbl_menu
+        WHERE
+        category_code = #{ categoryCode }
+    </select>
+
+    <!--insert, update,delete의 경우 resultType은 작성하지 않고, 기본_int로 수행 결과를 반환한다.
+       파라미터로 전달된 DTO의 필드명으로 값을 바인딩 해야 한다. 파라미터 타입도 생략이 가능하다.-->
+    <!--parameterType="com.ohgiraffers.section01.xmlconfig.MenuDTO" 생략가능 -->
+    <insert id="newMenu">
+        INSERT
+        INTO TBL_MENU(
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+        )
+        VALUES(
+         #{ name },
+         #{ price },
+         #{ categoryCode },
+         'Y'
+        )
+    </insert>
 </mapper>
 
