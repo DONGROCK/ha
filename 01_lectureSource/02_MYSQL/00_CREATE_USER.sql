@@ -17,3 +17,6 @@ CREATE USER '계정명'@'주소' IDENTIFIED BY '비밀번호';
 GRANT ALL PRIVILEGES ON menudb.* TO 'mtvs'@'%' ;
 
 SET GLOBAL sql_mode = '';
+
+create database memberdb;
+grant all privileges on memberdb.* to ohgiraffers@'%';

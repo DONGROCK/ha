@@ -10,4 +10,8 @@ public interface MenuMapper {
     MenuDTO selectCategoryCode(int categoryCode);
 
     int newMenu(MenuDTO menu);
+
+    int updateMenu(MenuDTO menu);
+
+    int deleteMenu(int code);
 }

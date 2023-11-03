@@ -68,5 +68,24 @@
          'Y'
         )
     </insert>
+    <update id="updateMenu">
+        UPDATE
+            tbl_menu
+        SET
+            menu_name= #{ name },
+            menu_price= #{ price },
+            category_code= #{categoryCode}
+        WHERE
+        menu_code= #{ code }
+
+    </update>
+
+    <delete id="deleteMenu">
+        DELETE
+        FROM
+            tbl_menu
+        where
+            menu_code = #{ code }
+    </delete>
 </mapper>
 

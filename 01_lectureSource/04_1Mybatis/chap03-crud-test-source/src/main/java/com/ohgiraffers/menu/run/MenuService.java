@@ -61,6 +61,40 @@ public class MenuService {
         } else {
             sqlSession.rollback();
         }
+        sqlSession.close();
+        return result > 0? true:false;
+    }
+
+    public boolean updateMenu(MenuDTO menu) {
+        SqlSession sqlSession = getSqlSession();
+        mapper = sqlSession.getMapper(MenuMapper.class);
+
+        int result = mapper.updateMenu(menu);
+
+        if(result > 0){
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+
+            return result > 0? true:false;
+    }
+
+
+    public boolean killMenu(int code) {
+        SqlSession sqlSession = getSqlSession();
+        mapper = sqlSession.getMapper(MenuMapper.class);
+
+        int result = mapper.deleteMenu(code);
+
+        if(result > 0){
+            sqlSession.commit();
+        }else {
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+
         return result > 0? true:false;
     }
 }

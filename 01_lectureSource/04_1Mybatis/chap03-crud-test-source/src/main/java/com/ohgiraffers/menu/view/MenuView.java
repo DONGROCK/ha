@@ -46,14 +46,22 @@ public class MenuView {
                 case 3: menuController.selectMenuByCategoryCode(inputCategoryCode()); break;
                 case 4: menuController.newMenu(inputMenu()); break;
                 case 5: menuController.changeMenu(updateMenu()); break;
+                case 6: menuController.killMenu(inputMenuCode()); break;
 
             }
         }while (true);
     }
 
+//    private Object deleteMenu() {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("삭제 할 메뉴코드를 입력해주세요 : ");
+//        String code = sc.nextLine();
+//
+//    }
+
     private Map<String, String> updateMenu() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("메뉴코드를 수정해주세요 : ");
+        System.out.print("수정할 메뉴 코드를 입력해주세요 : ");
         String code = sc.nextLine();
         System.out.print("메뉴 이름을 수정해주세요 : ");
         String name = sc.nextLine();
@@ -102,7 +110,7 @@ public class MenuView {
 
     private Map<String, String> inputMenuCode() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("조회할 메뉴 코드를 입력해주세요 : ");
+        System.out.print("메뉴코드를 입력해주세요 : ");
         String code = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
